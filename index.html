@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modern Interactive Gallery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="progressBar"></div>
+<div id="loader">Loading...</div>
+<div class="cursor-glow"></div>
+
+<header>
+  <h1>Gabriela Mede</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="home" class="hero hidden">
+  <p class="hero-kicker">Front-end developer in progress</p>
+  <h2>Professional demi-solo ballerina transitioning into web development</h2>
+  <p class="hero-text">
+    I build clean, modern, interactive websites while learning HTML, CSS, and JavaScript through real projects.
+  </p>
+  <a href="#projects" class="hero-btn">View Projects</a>
+</section>
+
+<!-- ABOUT -->
+<section class="about hidden" id="about">
+  <div class="about-card">
+    <p class="about-kicker">About Me</p>
+    <h2>From stage discipline to front-end development</h2>
+    <p class="about-text">
+      I am a professional demi-solo ballerina transitioning into web development.
+      My background has shaped the way I work — with discipline, consistency,
+      creativity, and strong attention to detail.
+    </p>
+    <p class="about-text">
+      I am currently learning HTML, CSS, and JavaScript by building real projects
+      and improving my skills step by step. My goal is to create clean, modern,
+      user-friendly websites and continue growing as a front-end developer.
+    </p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+  <p class="section-subtitle">
+    A selection of projects I built while learning front-end development.
+  </p>
+
+  <div id="gallery" class="gallery">
+
+    <div class="img-box"
+         data-title="Portfolio Website"
+         data-desc="A modern interactive portfolio website built using HTML, CSS, and JavaScript."
+         data-github="#"
+         data-live="#">
+      <img src="slika1.webp" alt="Portfolio Website">
+      <div class="overlay">Portfolio Website • HTML CSS JS</div>
+    </div>
+
+    <div class="img-box"
+         data-title="Landing Page"
+         data-desc="A clean and responsive landing page built with HTML and CSS."
+         data-github="#"
+         data-live="#">
+      <img src="slika2.webp" alt="Landing Page">
+      <div class="overlay">Landing Page • HTML CSS</div>
+    </div>
+
+    <div class="img-box"
+         data-title="To-do App"
+         data-desc="A task management app built with JavaScript. Includes localStorage, task counter, and filters."
+         data-github="https://github.com/GabiMede/Todo-App/commit/b26a898b3ae528f15c301eb3d0d319ca9f83e977"
+         data-live="https://gabson-todo.netlify.app/">
+      <img src="todo-preview.webp" alt="To-do App">
+      <div class="overlay">To-do App • JavaScript + LocalStorage</div>
+    </div>
+
+    <div class="img-box"
+         data-title="Animated Loader"
+         data-desc="Custom loading animations created using CSS."
+         data-github="#"
+         data-live="#">
+      <img src="slika4.webp" alt="Animated Loader">
+      <div class="overlay">Animated Loader • CSS</div>
+    </div>
+
+    <div class="img-box"
+         data-title="UI/UX Practice"
+         data-desc="Practice project focused on layout, spacing and modern UI design."
+         data-github="#"
+         data-live="#">
+      <img src="slika5.jpg" alt="UI/UX Practice">
+      <div class="overlay">UI/UX Practice • Responsive Design</div>
+    </div>
+
+    <div class="img-box"
+         data-title="Work in Progress"
+         data-desc="A project currently in development."
+         data-github="#"
+         data-live="#">
+      <img src="slika6.jpg" alt="Work in Progress">
+      <div class="overlay">Work in Progress • JavaScript</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="stack hidden">
+<h2>Tech Stack</h2>
+<div class="badges">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Responsive</span>
+<span>UI/UX</span>
+</div>
+</section>
+
+<section id="contact" class="contact hidden">
+  <div class="contact-card">
+    <p class="contact-kicker">Contact</p>
+    <h2>Let’s work together</h2>
+   <p class="contact-text">
+  I’m open to creative opportunities, collaborations, and front-end projects
+  where I can continue learning and growing.
+</p>
+
+    <a href="mailto:medegabi1478@gmail.com" class="contact-email">medegabi1478@gmail.com</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Gabriela Mede • Built with HTML, CSS & JavaScript</p>
+</footer>
+
+
+<button class="floating" onclick="toggleChat()">Chat</button>
+
+<div class="chat-box" id="chatBox">
+
+  <div class="chat-header">
+    <span class="chat-title">Chat</span>
+    <div class="chat-actions">
+      <button class="clear-mini" onclick="clearChat()">Clear</button>
+      <span onclick="toggleChat()" class="close-x">✕</span>
+    </div>
+  </div>
+
+  <div id="messages"></div>
+
+  <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Type a message..." />
+    <button>Send</button>
+  </div>
+
+</div>
+
+<div id="projectModal" class="project-modal">
+  <div class="project-modal-content">
+    <span id="projectCloseBtn" class="project-close">&times;</span>
+
+    <img id="projectImage" class="project-image" src="" alt="Project preview">
+
+    <h3 id="projectTitle"></h3>
+    <p id="projectDesc"></p>
+
+    <div class="project-links">
+      <a id="projectGithub" href="#" target="_blank">GitHub</a>
+      <a id="projectLive" href="#" target="_blank">Live Demo</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
